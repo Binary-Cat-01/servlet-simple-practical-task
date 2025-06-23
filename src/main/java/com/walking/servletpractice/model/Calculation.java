@@ -1,31 +1,31 @@
 package com.walking.servletpractice.model;
 
-public class Calculation {
-    public String type;
-    public String[] operands;
-    public String result;
+import java.util.List;
 
-    public String getType() {
+/**
+ * Объект бизнес-логики отражающий конкретное вычисление. Инкапсулирует данные
+ * о типе вычисления, данных для вычисления и результате вычисления.
+ */
+public class Calculation {
+    private final CalculationType type;
+    private final List<CalculationData> data;
+    private final CalculationResult result;
+
+    public Calculation(CalculationType type, List<CalculationData> data, CalculationResult result) {
+        this.type = type;
+        this.data = data;
+        this.result = result;
+    }
+
+    public CalculationType getType() {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public List<CalculationData> getData() {
+        return data;
     }
 
-    public String[] getOperands() {
-        return operands;
-    }
-
-    public void setOperands(String[] operands) {
-        this.operands = operands;
-    }
-
-    public String getResult() {
+    public CalculationResult getResult() {
         return result;
-    }
-
-    public void setResult(String result) {
-        this.result = result;
     }
 }

@@ -3,6 +3,9 @@ plugins {
     id 'war'
 }
 
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
 group = 'com.walking.servletpractice'
 version = '1.0-SNAPSHOT'
 
@@ -22,5 +25,5 @@ test {
 }
 
 war {
-    archiveFileName = 'calculator.war'
+    archiveFileName = 'calculation.war'
 }
